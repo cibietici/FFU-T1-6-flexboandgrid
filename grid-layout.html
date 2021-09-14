@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS-Grid </title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <!-- 
+        Vi bruker style tag her til å inkludere 
+        alle css klasser ved siden av html kode
+        for å skille flex klasser fra grid klasser
+    -->
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 240px 2fr;
+            /*grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
+            gap: 5px;
+            grid-template-rows: min-content minmax(100px, auto) min-content;
+            background-color: rgb(230, 120, 230);
+        }
+        .grid-item {
+            padding: 20px;
+            font-size: 40px;
+            color: #fff;
+        }
+        .grid-item-span-horizzontally {
+            grid-column: span 2;
+        }
+        .grid-item:nth-child(odd) {
+            background-color: rgb(79, 67, 67);
+        }
+        .grid-item:nth-child(even) {
+            background-color: rgb(130, 117, 117);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        <div class="grid-item grid-item-span-horizzontally">
+            header
+        </div>
+        <div class="grid-item">
+            aside
+        </div>
+        <div class="grid-item">
+            <h1>Lorem</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br></p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                Officiis harum libero eum. Natus iure voluptate, neque laudantium 
+                optio hic rerum reiciendis aliquam velit aut fugiat dignissimos, 
+                totam dolor nulla pariatur laboriosam a porro sit nesciunt atque doloribus? 
+                Aspernatur eum vitae debitis consequuntur sunt, repellat quos assumenda molestiae atque aut. Aliquid qui iure aspernatur exercitationem vero facilis alias vel tenetur ex.
+            </p>  
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                Totam dolorem sequi officia recusandae ducimus soluta, quas, 
+                velit mollitia accusantium optio assumenda perspiciatis, 
+                accusamus nulla minima eos quis nihil at officiis dignissimos 
+                sit dolore! Quia nihil unde natus, aperiam aspernatur sint.
+            </p>
+        </div>
+        <div class="grid-item grid-item-span-horizzontally">
+            footer
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS-Grid </title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <!-- 
+        Vi bruker style tag her til å inkludere 
+        alle css klasser ved siden av html kode
+        for å skille flex klasser fra grid klasser
+    -->
+    <style>
+        .grid {
+            width: 100vw;
+            height: 100vh;
+            max-width: 940px;
+            background-color: #aaa;
+            margin: 0 auto;
+            display: grid;
+            /* følgende linje skaper som resultat en grid responsive */
+            /*grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            grid-auto-rows: min-content 1fr min-content;
+            grid-template-areas: /* sett gjerne celler elementer visuelt som følgende */
+                "boks1 boks1 box3" 
+                "boks1 boks1 box3"
+                "box2 box2 box3";
+            ;
+        }
+
+        .grid-item {
+            background-color: gold;
+            padding: 20px;
+            font-size: 28px;
+        }
+
+        .box1 {
+            /* 
+            grid-column: span 3; 
+            grid-column-start: 1;
+            grid-column-end: 4; 
+            grid-column: 1/4; de forrige to linjer kan oppummeres her med 1/4
+            */
+            grid-area: boks1; /* navn av grid-area trenger ikke å være sammen som klasse */
+            background-color: greenyellow;
+        }
+
+        .box2 {
+            grid-area: box2;
+            background-color: rgb(173, 66, 66);
+        }
+
+        .box3 {
+            /*
+            grid-row: span 2;
+            grid-row-start: 2;
+            grid-row-end: 4;
+            */
+            grid-area: box3;
+            background-color: rgb(40, 167, 160);
+        }
+
+        .box4 {
+            grid-area: box4;
+            background-color: rgb(10, 10, 150);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid">
+        <div class="grid-item box1">
+            1
+        </div>
+        <div class="grid-item box2">
+            2
+        </div>
+        <div class="grid-item box3">
+            3
+        </div>
+    </div>
+    
+</body>
+</html>
